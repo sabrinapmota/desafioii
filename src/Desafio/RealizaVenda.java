@@ -4,7 +4,7 @@ package Desafio;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class RealizaVenda implements Venda {
+public class RealizaVenda {
 
 
 
