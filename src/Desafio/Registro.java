@@ -1,6 +1,6 @@
 package Desafio;
 
-public abstract class Registro {
+public abstract class Registro implements Venda{
 
    private String cpf;
    private String email;
