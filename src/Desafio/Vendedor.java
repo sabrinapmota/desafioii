@@ -73,5 +73,3 @@ public class Vendedor {
         this.email = email;
     }
 }
-
-
