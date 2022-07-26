@@ -100,6 +100,25 @@ public class Cliente {
     }
 
     public void excluirCliente() {
-        //excluir cliente cadastrado
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Digite o nome a ser excluido: ");
+        String excluir = input.nextLine();
+
+        boolean excluirItem = false;
+
+        for (int i = 0; i < this.nomeCli.size(); i++) {
+            if (this.nomeCli.get(i).nomeCliente.equals(excluir)) {
+                this.nomeCli.remove(i);
+                System.out.println("Item excluido com Sucesso");
+                excluirItem = true;
+            }
+        }
+        if (!excluirItem) {
+            System.out.println("Valor não encontrado,favor verificar !!! ");
+        }
+
     }
+
+}
 }
