@@ -1,7 +1,12 @@
 package Desafio;
 
+import com.sun.source.tree.NewArrayTree;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
 
        /* Vendedor v1 = new Vendedor("174", "jumento@jumento");
         v1.adiconaVendedor();
@@ -9,9 +14,12 @@ public class Main {
 
         System.out.println("-------------------------------------------------------");
 
-        RealizaVenda Rv1 = new RealizaVenda ();
+        RealizaVenda Rv1 = new RealizaVenda ("String", "String", "String", "double", "String");
         Rv1.cadastraVenda ();
-        Rv1.calculaVenda ();
+        Rv1.getCpf ();
+        Rv1.getEmail ();
+
+
 
         System.out.println("---------------------------------------------------------");
 
