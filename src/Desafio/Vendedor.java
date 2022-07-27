@@ -19,7 +19,7 @@ public class Vendedor {
 
     }/// adicionar
 
-    public void adiconaVendedor() {
+    public void adicionaVendedor() {
         System.out.println("Digite nome do vendedor(a)");
         nomeVendedor = input.nextLine();
 
@@ -58,7 +58,7 @@ public class Vendedor {
             System.out.println("Deseja cadastrar mais vendedor ? S / N ");
             String cadastro = loop.next();
             if (cadastro.equalsIgnoreCase("S")) {
-                adiconaVendedor();
+                adicionaVendedor();
             } else {
                 continuarCadastrandoVendedo = false;
             }
