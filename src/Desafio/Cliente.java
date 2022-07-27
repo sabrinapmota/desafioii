@@ -7,9 +7,8 @@ public class Cliente {
 
     Scanner cliente = new Scanner(System.in);
 
-    //Set<String> Cliente = new HashSet<>();
     ArrayList<Cliente> nomeCli = new ArrayList<>();
-    ArrayList<Cliente> emailCli = new ArrayList<>();
+
     boolean continuaCadastroCliente = true;
     String nomeCliente;
     String cpfCliente;
