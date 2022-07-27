@@ -3,7 +3,7 @@ package Desafio;
 public class Main {
     public static void main(String[] args) {
 
-        Vendedor v1 = new Vendedor("174", "jumento@jumento");
+       /* Vendedor v1 = new Vendedor("174", "jumento@jumento");
         v1.adiconaVendedor();
         v1.exibirVendedor();
 
@@ -26,9 +26,11 @@ public class Main {
 
         Registro R1 = new Registro("String","String");
         R1.getCpf ();
-        R1.getEmail ();
+        R1.getEmail ();*/
 
-
+        Cliente cliente = new Cliente("a","a","a");
+        cliente.cadastraCliente();
+        cliente.exibeCliente();
     }
 
 }

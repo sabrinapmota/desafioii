@@ -9,6 +9,7 @@ public class Cliente {
 
     //Set<String> Cliente = new HashSet<>();
     ArrayList<Cliente> nomeCli = new ArrayList<>();
+    ArrayList<Cliente> emailCli = new ArrayList<>();
     boolean continuaCadastroCliente = true;
     String nomeCliente;
     String cpfCliente;
@@ -52,13 +53,32 @@ public class Cliente {
         System.out.println("Digite o CPF do Cliente a ser cadastrado ");
         cpfCliente = cliente.nextLine();
 
-        System.out.println("Digite o e-mail Cliente a ser cadastrado ");
+        for (int i = 0; i < nomeCli.size(); i++) {
+            if (cpfCliente.equals(nomeCli.get(i).cpfCliente)) {
+                System.out.println("Cpf já existente na base de dados, favor informar novamente: ");
+                cpfCliente = cliente.nextLine();
+            }
+        }
+
+        System.out.println("Digite o e-mail completo do Cliente a ser cadastrado ");
         emailCliente = cliente.nextLine();
+        {
+            for (int i = 0; i < nomeCli.size(); i++) {
+                if (emailCliente.equals(nomeCli.get(i).emailCliente)) {
+                    System.out.println("E-mail informado já existente na base de dados, favor informar novamente: ");
+                    emailCliente = cliente.nextLine();
+                }
+            }
 
-        Cliente cliente1 = new Cliente(nomeCliente, cpfCliente, emailCliente);
-
-        nomeCli.add(cliente1);
-
+            if (emailCliente.contains("@") && (emailCliente.contains(".com") || (emailCliente.contains(".br")))) {
+                Cliente cliente1 = new Cliente(nomeCliente, cpfCliente, emailCliente);
+                nomeCli.add(cliente1);
+            } else {
+                System.out.println("E-mail informado incorreto. Favor verificar e informar novamente: ");
+                System.out.println(" ");
+                System.out.println("Cadastro não realizado.... ");
+            }
+        }
         continuarCadastrando();
     }
 
@@ -83,20 +103,6 @@ public class Cliente {
         for (int i = 0; i < nomeCli.size(); i++) {
             System.out.println("NOME " + nomeCli.get(i).nomeCliente + " CPF " + nomeCli.get(i).cpfCliente + " E-MAIL " + nomeCli.get(i).emailCliente);
         }
-    }
-
-    public boolean validaCliente() {
-
-        for (int i = 0; i < nomeCli.size(); i++) {
-            if (nomeCli.get(i).nomeCliente == nomeCliente) {
-                System.out.println("Nome duplicado");
-            } else if (nomeCli.get(i).cpfCliente == cpfCliente) {
-                System.out.println("CPF duplicado");
-            } else if (nomeCli.get(i).emailCliente == emailCliente) {
-                System.out.println("EMAIL duplicado");
-            }
-        }
-        return true;
     }
 
     public void excluirCliente() {
