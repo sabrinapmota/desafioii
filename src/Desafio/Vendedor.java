@@ -20,7 +20,7 @@ public class Vendedor {
     }/// adicionar
 
     public void adicionaVendedor() {
-        System.out.println("Informe o nome do(a) vendedor(a)");
+        System.out.println("Vamos iniciar o cadastro:\nInforme o nome do(a) vendedor(a)");
         nomeVendedor = input.nextLine();
 
         System.out.println("Digite o CPF do(a) vendedor(a) ?  ");

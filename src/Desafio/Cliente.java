@@ -46,7 +46,7 @@ public class Cliente {
 
     public void cadastraCliente() {
 
-        System.out.println("Digite o nome do Cliente a ser cadastrado ");
+        System.out.println("Vamos iniciar o cadastro:\nDigite o nome do Cliente a ser cadastrado ");
         nomeCliente = cliente.nextLine();
 
         System.out.println("Digite o CPF do Cliente a ser cadastrado ");

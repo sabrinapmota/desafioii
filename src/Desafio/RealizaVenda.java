@@ -35,7 +35,8 @@ public class RealizaVenda extends Registro {
             v1.getNomeVendedor();
 
         } else {
-            System.out.println("Vendedor(a) não está cadastrado! Faça o cadastro do(a) Vendedor(a).");
+            System.out.println("Vendedor(a) não está cadastrado!");
+            System.out.println();
             v1.adicionaVendedor();
         }
 
@@ -48,7 +49,8 @@ public class RealizaVenda extends Registro {
             c1.getNomeCliente();
 
         } else {
-            System.out.println("Cliente não cadastrado! Faça o cadastro do Cliente.");
+            System.out.println("Cliente não cadastrado!");
+            System.out.println();
             c1.cadastraCliente();
         }
         System.out.println("Informe o valor da venda: ");
