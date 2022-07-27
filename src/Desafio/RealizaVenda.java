@@ -24,17 +24,40 @@ public class RealizaVenda extends Registro {
 
 
     public void cadastraVenda() {
+        Vendedor v1 = new Vendedor("a", "a", "a");
+        Cliente c1 = new Cliente("a", "a", "a");
 
-        System.out.println("Informe o nome do cliente: " + nomeCliente + input.nextLine());
+        System.out.println("digite a data da venda: ");
+        dataVenda = input.nextLine();
+        System.out.println("Digite o nome do vendedor: ");
+        String valida = input.nextLine();
+        if (v1.ListaVendedor.contains(valida)) {
+            v1.getNomeVendedor();
 
-        System.out.println("Informe data da venda: " + dataVenda + input.nextLine());
+        } else {
+            v1.adicionaVendedor();
+        }
+
+        System.out.println("Informe o nome do cliente: ");
 
 
-        System.out.println("Informe o valor da venda:" + valorVenda + input.nextLine());
+        nomeCliente = input.nextLine();
+        if (c1.nomeCli.contains(nomeCliente)) {
+
+            c1.getNomeCliente();
+
+        } else {
+            c1.cadastraCliente();
+        }
+        System.out.println("Informe o valor da venda: ");
+        valorVenda = input.nextDouble();
 
 
+        RealizaVenda r1 = new RealizaVenda("a", "a", "a", 1, "a");
+
+        realizaVenda.add(r1);
     }
-
+/*
     boolean executar = true;
     int opcao = input.nextInt();
 
@@ -53,6 +76,6 @@ public class RealizaVenda extends Registro {
             executar = false;
         }
 
+ */
     }
 
-}
