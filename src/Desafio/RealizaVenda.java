@@ -29,12 +29,13 @@ public class RealizaVenda extends Registro {
 
         System.out.println("digite a data da venda: ");
         dataVenda = input.nextLine();
-        System.out.println("Digite o nome do vendedor: ");
+        System.out.println("Digite o nome do vendedor(a): ");
         String valida = input.nextLine();
         if (v1.ListaVendedor.contains(valida)) {
             v1.getNomeVendedor();
 
         } else {
+            System.out.println("Vendedor(a) não está cadastrado! Faça o cadastro do(a) Vendedor(a).");
             v1.adicionaVendedor();
         }
 
@@ -47,6 +48,7 @@ public class RealizaVenda extends Registro {
             c1.getNomeCliente();
 
         } else {
+            System.out.println("Cliente não cadastrado! Faça o cadastro do Cliente.");
             c1.cadastraCliente();
         }
         System.out.println("Informe o valor da venda: ");

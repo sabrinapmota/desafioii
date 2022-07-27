@@ -20,10 +20,10 @@ public class Vendedor {
     }/// adicionar
 
     public void adicionaVendedor() {
-        System.out.println("Digite nome do vendedor(a)");
+        System.out.println("Informe o nome do(a) vendedor(a)");
         nomeVendedor = input.nextLine();
 
-        System.out.println("Digite o CPF do vendedor (a) ?  ");
+        System.out.println("Digite o CPF do(a) vendedor(a) ?  ");
         cpf = input.nextLine();
         for (int i = 0; i < ListaVendedor.size(); i++) {
             if (ListaVendedor.contains(cpf)) {
@@ -32,7 +32,7 @@ public class Vendedor {
             }
         }
 
-        System.out.println("Digite o email do vendedor (a) ? ");
+        System.out.println("Digite o email do(a) vendedor(a) ? ");
         email = input.next();
         for (int i = 0; i < ListaVendedor.size(); i++) {
             if (ListaVendedor.contains(email)) {
