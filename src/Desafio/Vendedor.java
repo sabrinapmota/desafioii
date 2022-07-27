@@ -1,18 +1,15 @@
 package Desafio;
-import com.sun.management.UnixOperatingSystemMXBean;
 
-import java.sql.ClientInfoStatus;
-import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Vendedor {
     private String nomeVendedor;
     private String cpf;
-    private String  email;
+    private String email;
     Scanner input = new Scanner(System.in);
-    ArrayList<Vendedor>ListaVendedor = new ArrayList<>();
-    private boolean continuarCadastrandoVendedo =true;
+    ArrayList<Vendedor> ListaVendedor = new ArrayList<>();
+    private boolean continuarCadastrandoVendedo = true;
 
     public Vendedor(String cpf, String email, String nomeVendedor) {
         this.cpf = cpf;
@@ -22,32 +19,32 @@ public class Vendedor {
 
     }/// adicionar
 
-    public void adiconaVendedor(){
-        System.out.println( "Digite nome do vendedor(a)");
+    public void adiconaVendedor() {
+        System.out.println("Digite nome do vendedor(a)");
         nomeVendedor = input.nextLine();
 
         System.out.println("Digite o CPF do vendedor (a) ?  ");
         cpf = input.nextLine();
         for (int i = 0; i < ListaVendedor.size(); i++) {
-            if (ListaVendedor.contains(cpf)){
+            if (ListaVendedor.contains(cpf)) {
                 System.out.println("Esse CPF já existe na base dados, por favor informar novamente ");
-                cpf =input.nextLine();
+                cpf = input.nextLine();
             }
         }
 
         System.out.println("Digite o email do vendedor (a) ? ");
         email = input.next();
-        for (int i = 0; i < ListaVendedor.size() ; i++) {
-            if(ListaVendedor.contains(email)){
+        for (int i = 0; i < ListaVendedor.size(); i++) {
+            if (ListaVendedor.contains(email)) {
                 System.out.println("Esse email já existe na base dados, por favor informar novamente ");
-                 email = input.next();
+                email = input.next();
             }
         }
 
-        if (email.contains("@") && email.contains(".com") || email.contains(".br")){
-            Vendedor vendedor1= new Vendedor(cpf, email,nomeVendedor);
+        if (email.contains("@") && email.contains(".com") || email.contains(".br")) {
+            Vendedor vendedor1 = new Vendedor(cpf, email, nomeVendedor);
             ListaVendedor.add(vendedor1);
-        }else {
+        } else {
             System.out.println("Email está incorreto Favor verificar e informar novamente  ");
             System.out.println("");
             System.out.println("Cadastro não realizado");
@@ -55,23 +52,24 @@ public class Vendedor {
 
     }
 
-    public void continuarCadastrandoVendedor(){
+    public void continuarCadastrandoVendedor() {
         Scanner loop = new Scanner(System.in);
-        while (continuarCadastrandoVendedo){
+        while (continuarCadastrandoVendedo) {
             System.out.println("Deseja cadastrar mais vendedor ? S / N ");
             String cadastro = loop.next();
-            if (cadastro.equalsIgnoreCase("S")){
+            if (cadastro.equalsIgnoreCase("S")) {
                 adiconaVendedor();
-            }else {
+            } else {
                 continuarCadastrandoVendedo = false;
             }
         }
     }
+
     /// Exibir
-    public void exibirVendedor(){
+    public void exibirVendedor() {
         System.out.println("LIsta de vendedores cadastrados ");
-        for (int i =0; i < ListaVendedor.size(); i++)
-            System.out.println("Nome "+ ListaVendedor.get(i).nomeVendedor+"Número do CPF  "   +  ListaVendedor.get(i).getCpf()+ "Email" + ListaVendedor.get(i).getEmail());
+        for (int i = 0; i < ListaVendedor.size(); i++)
+            System.out.println("Nome " + ListaVendedor.get(i).nomeVendedor + "Número do CPF  " + ListaVendedor.get(i).getCpf() + "Email" + ListaVendedor.get(i).getEmail());
 
     }
 

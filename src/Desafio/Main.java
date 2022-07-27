@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner (System.in);
+        Scanner sc = new Scanner(System.in);
 
        /* Vendedor v1 = new Vendedor("174", "jumento@jumento");
         v1.adiconaVendedor();
@@ -36,7 +36,7 @@ public class Main {
         R1.getCpf ();
         R1.getEmail ();*/
 
-        Cliente cliente = new Cliente("a","a","a");
+        Cliente cliente = new Cliente("a", "a", "a");
         cliente.cadastraCliente();
         cliente.exibeCliente();
     }
