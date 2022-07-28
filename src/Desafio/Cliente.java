@@ -7,7 +7,7 @@ public class Cliente {
 
     Scanner cliente = new Scanner(System.in);
 
-    ArrayList<Cliente> nomeCli = new ArrayList<>();
+    ArrayList<Cliente> listaClientes = new ArrayList<>();
 
     boolean continuaCadastroCliente = true;
     String nomeCliente;
@@ -52,8 +52,8 @@ public class Cliente {
         System.out.println("Digite o CPF do Cliente a ser cadastrado ");
         cpfCliente = cliente.nextLine();
 
-        for (int i = 0; i < nomeCli.size(); i++) {
-            if (cpfCliente.equals(nomeCli.get(i).cpfCliente)) {
+        for (int i = 0; i < listaClientes.size(); i++) {
+            if (cpfCliente.equals(listaClientes.get(i).cpfCliente)) {
                 System.out.println("Cpf já existente na base de dados, favor informar novamente: ");
                 cpfCliente = cliente.nextLine();
             }
@@ -62,8 +62,8 @@ public class Cliente {
         System.out.println("Digite o e-mail completo do Cliente a ser cadastrado ");
         emailCliente = cliente.nextLine();
         {
-            for (int i = 0; i < nomeCli.size(); i++) {
-                if (emailCliente.equals(nomeCli.get(i).emailCliente)) {
+            for (int i = 0; i < listaClientes.size(); i++) {
+                if (emailCliente.equals(listaClientes.get(i).emailCliente)) {
                     System.out.println("E-mail informado já existente na base de dados, favor informar novamente: ");
                     emailCliente = cliente.nextLine();
                 }
@@ -71,7 +71,7 @@ public class Cliente {
 
             if (emailCliente.contains("@") && (emailCliente.contains(".com") || (emailCliente.contains(".br")))) {
                 Cliente cliente1 = new Cliente(nomeCliente, cpfCliente, emailCliente);
-                nomeCli.add(cliente1);
+                listaClientes.add(cliente1);
             } else {
                 System.out.println("E-mail informado incorreto. Favor verificar e informar novamente: ");
                 System.out.println(" ");
@@ -99,8 +99,8 @@ public class Cliente {
     public void exibeCliente() {
 
         System.out.println("Lista de Clientes Cadastrados ");
-        for (int i = 0; i < nomeCli.size(); i++) {
-            System.out.println("NOME " + nomeCli.get(i).nomeCliente + " CPF " + nomeCli.get(i).cpfCliente + " E-MAIL " + nomeCli.get(i).emailCliente);
+        for (int i = 0; i < listaClientes.size(); i++) {
+            System.out.println("NOME " + listaClientes.get(i).nomeCliente + " CPF " + listaClientes.get(i).cpfCliente + " E-MAIL " + listaClientes.get(i).emailCliente);
         }
     }
 
@@ -112,9 +112,9 @@ public class Cliente {
 
         boolean excluirItem = false;
 
-        for (int i = 0; i < this.nomeCli.size(); i++) {
-            if (this.nomeCli.get(i).nomeCliente.equals(excluir)) {
-                this.nomeCli.remove(i);
+        for (int i = 0; i < this.listaClientes.size(); i++) {
+            if (this.listaClientes.get(i).nomeCliente.equals(excluir)) {
+                this.listaClientes.remove(i);
                 System.out.println("Item excluido com Sucesso");
                 excluirItem = true;
             }

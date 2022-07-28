@@ -19,7 +19,7 @@ public class Vendedor {
 
     }/// adicionar
 
-    public void adicionaVendedor() {
+    public String adicionaVendedor() {
         System.out.println("Vamos iniciar o cadastro:\nInforme o nome do(a) vendedor(a)");
         nomeVendedor = input.nextLine();
 
@@ -37,7 +37,7 @@ public class Vendedor {
         for (int i = 0; i < ListaVendedor.size(); i++) {
             if (ListaVendedor.contains(email)) {
                 System.out.println("Esse email já existe na base dados, por favor informar novamente ");
-                email = input.next();
+                email = input.nextLine();
             }
         }
 
@@ -49,28 +49,35 @@ public class Vendedor {
             System.out.println("");
             System.out.println("Cadastro não realizado");
         }
-
+        continuarCadastrandoVendedor();
+        return email;
     }
 
     public void continuarCadastrandoVendedor() {
-        Scanner loop = new Scanner(System.in);
+        Scanner recadastroVendedor = new Scanner(System.in);
+
         while (continuarCadastrandoVendedo) {
             System.out.println("Deseja cadastrar mais vendedor ? S / N ");
-            String cadastro = loop.next();
-            if (cadastro.equalsIgnoreCase("S")) {
+            String cadVendedor = recadastroVendedor.nextLine();
+
+            if (cadVendedor.equalsIgnoreCase("S")) {
                 adicionaVendedor();
             } else {
                 continuarCadastrandoVendedo = false;
             }
         }
     }
-
     /// Exibir
     public void exibirVendedor() {
         System.out.println("LIsta de vendedores cadastrados ");
         for (int i = 0; i < ListaVendedor.size(); i++)
-            System.out.println("Nome " + ListaVendedor.get(i).nomeVendedor + "Número do CPF  " + ListaVendedor.get(i).getCpf() + "Email" + ListaVendedor.get(i).getEmail());
+            System.out.println("Nome: " + ListaVendedor.get(i).nomeVendedor + " Número do CPF " + ListaVendedor.get(i).getCpf() + " Email " + ListaVendedor.get(i).getEmail());
+    }
+     public void imprimeLista(){
+        for (int i = 0; i < ListaVendedor.size(); i++) {
+            System.out.println(ListaVendedor.get(i).getCpf());
 
+        }
     }
 
     public String getCpf() {
